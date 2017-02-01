@@ -1,0 +1,117 @@
+.kpi-default {
+    margin:0px auto;
+    background-color:transparent;
+    padding:10px;
+    position: relative;
+    z-index: 10;
+}
+
+.kpi-default:after {
+    background-color: white;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+
+.kpi-low {
+    margin:0px auto;
+    background-color:transparent;
+    padding:10px;
+    position: relative;
+    z-index: 10;
+}
+
+.kpi-low:after {
+    background-color: #5bc0de;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+
+.kpi-medium {
+    margin:0px auto;
+    background-color:transparent;
+    padding:10px;
+    position: relative;
+    z-index: 10;
+}
+
+.kpi-medium:after {
+    background-color: #f0ad4e;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+
+.kpi-high {
+    margin:0px auto;
+    background-color:transparent;
+    padding:10px;
+    position: relative;
+    z-index: 10;
+}
+
+.kpi-high:after {
+    background-color: #d9536b;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: -1;
+}
+
+.kpi-header{
+    margin: 0px;
+    background-color: black;
+    opacity: .4;
+    /*margin: 10px;*/
+}
+
+.kpi-title {
+    /*border-bottom: 1px solid;*/
+    /*font-family: 'Poiret One', cursive;*/
+    /*font-family: 'Baloo Bhaina', cursive;*/
+    font-family: 'Lato', sans-serif;
+    color: beige;
+    font-size: 1.5em;
+    font-weight: 100;
+}
+
+
+.kpi-data {
+    margin: 10px;
+    /*font-family: 'Indie Flower';*/
+    /*font-family: 'Baloo Bhaina', cursive;*/
+    /*font-family: 'Poiret One', cursive;*/
+    font-family: 'Lato', sans-serif;
+    color: beige;
+    font-size: 2em;
+    font-weight: 300;
+    /*text-shadow: -1px 0 beige, 0 1px beige, 1px 0 beige, 0 -1px beige;*/
+}
+
+.kpi-value {
+    text-align: right;
+}
+
+.kpi-unit {
+    text-align: right;
+}

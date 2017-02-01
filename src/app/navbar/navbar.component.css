@@ -1,0 +1,16 @@
+.my-navbar {
+    background-color: #4cd661;
+    height: 4em;
+    right: 0px;
+    padding-top: 1em;
+}
+
+.iconwhite {
+    font-size: 2em;
+    color: white;
+    cursor:pointer;
+}
+
+.my-navbar-element {
+    text-align: center;
+}

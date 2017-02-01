@@ -1,0 +1,8 @@
+<div class="container-fluid my-navbar">
+  <span class="my-navbar-element" *ngFor="let elem of elements">
+    <a [routerLink]=" [elem.route] " routerLinkActive="active" title="{{ elem.name }}">
+      <i class="{{ elem.icon }} {{ elem.iconStyle }}" aria-hidden="true"></i>
+      {{ elem.name }}
+    </a>&nbsp;
+  </span>
+</div>

@@ -7,12 +7,6 @@ import { AppState } from '../app.service';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-  public localState = { value: '' };
   constructor(public appState: AppState) {}
-
-  public ngOnInit() {
-    this.appState.getUser().subscribe(response => {
-      console.log(response);
-    });
-  }
+  public ngOnInit() {}
 }

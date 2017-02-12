@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 import * as echarts from 'echarts';
-
+import * as moment from 'moment';
 
 /*
  * App Component
@@ -75,18 +75,22 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() {
     let myChart = echarts.init(this.chart.nativeElement);
-    let option = {
-      tooltip: { },
-      legend: { data: [ 'Sales' ] },
-      xAxis: { data: [ "shirt", "cardign", "chiffon shirt", "pants", "heels", "socks" ] },
-      yAxis: { },
-      series: [{
-        name: 'Sales',
-        type: 'bar',
-        data: [5, 20, 36, 10, 10, 20]
-      }]
-    };
-    myChart.setOption(option);
+    let to = moment().unix(),
+        from = moment().subtract(3, 'year').unix();
+    this.appState.getTemperatureBy('avg', from, to, 'day').subscribe(response => {
+      let option = {
+        tooltip: { },
+        legend: { data: [ 'Temperature' ] },
+        xAxis: { data: response.x },
+        yAxis: { },
+        series: [{
+          name: 'Temperature',
+          type: 'line',
+          data: response.y
+        }]
+      };
+      myChart.setOption(option);
+    });
 
     let myChart2 = echarts.init(this.chart2.nativeElement);
     let option2 = {

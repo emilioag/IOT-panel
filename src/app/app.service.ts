@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 export type InternalStateType = {
@@ -11,8 +11,16 @@ export class AppState {
 
   constructor (private http: Http) {}
 
-  getUser() {
-    return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
+  getTemperatureBy(lambda, from, to, interval) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.get(
+      'http://localhost:8000/api/mesures/<function>/temp/from/<from>/to/<to>/by/<interval>'
+      .replace('<function>', lambda)
+      .replace('<from>', from)
+      .replace('<to>', to)
+      .replace('<interval>', interval),
+      {headers: headers}
+     )
     .map((res:Response) => res.json());
   }
 

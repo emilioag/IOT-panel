@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 export type InternalStateType = {
   [key: string]: any
@@ -6,6 +8,13 @@ export type InternalStateType = {
 
 @Injectable()
 export class AppState {
+
+  constructor (private http: Http) {}
+
+  getUser() {
+    return this.http.get(`https://conduit.productionready.io/api/profiles/eric`)
+    .map((res:Response) => res.json());
+  }
 
   public _state: InternalStateType = { };
 
